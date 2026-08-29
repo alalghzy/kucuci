@@ -45,8 +45,17 @@ for (const target of ['.env', '.dev.vars']) {
   }
 }
 
-// 4. Wrangler login
-step(4, 'Cek login Cloudflare (wrangler)...')
+// 4. Migrasi D1 lokal (idempotent — skip yang sudah terpasang)
+step(4, 'Siapkan database lokal (migrasi D1)...')
+try {
+  execSync('npx wrangler d1 migrations apply kucuci-db --local', { cwd: root, stdio: 'inherit' })
+  log('  ✓ Database lokal siap')
+} catch {
+  log('  ⚠ Migrasi lokal gagal — jalankan manual: npm run db:migrate')
+}
+
+// 5. Wrangler login
+step(5, 'Cek login Cloudflare (wrangler)...')
 let cfOk = false
 try {
   const out = execSync('npx wrangler whoami', { cwd: root, encoding: 'utf8', timeout: 60000 })
@@ -57,8 +66,8 @@ try {
 }
 if (!cfOk) log('    → jalankan: npx wrangler login')
 
-// 5. Next steps
-step(5, 'Langkah berikutnya:')
+// 6. Next steps
+step(6, 'Langkah berikutnya:')
 log(`
   1. Edit \x1b[33m.env\x1b[0m dan \x1b[33m.dev.vars\x1b[0m — isi secret (Google OAuth, JWT, admin, Midtrans)
   2. Jalankan dev server:
