@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D9488"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#g)"/>
+  <!-- Bubbles / suds representing clean laundry -->
+  <circle cx="17" cy="18" r="7" fill="#CCFBF1"/>
+  <circle cx="31" cy="17" r="5" fill="#F0FDFA" opacity="0.9"/>
+  <circle cx="24" cy="28" r="8.5" fill="#fff"/>
+  <circle cx="20" cy="31" r="3" fill="#99F6E4" opacity="0.6"/>
+  <path d="M24 23c3.5 0 5 1.8 5 4a4 4 0 0 1-4 4h-5.5v-8h4.5z" fill="#0D9488"/>
+</svg>

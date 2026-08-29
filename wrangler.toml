@@ -1,0 +1,10 @@
+name = "kucuci"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "kucuci_db"
+database_name = "kucuci-db"
+database_id = "9aa69b63-38d7-4342-bc83-88ef3bcd7ca1"
+migrations_dir = "migrations"
